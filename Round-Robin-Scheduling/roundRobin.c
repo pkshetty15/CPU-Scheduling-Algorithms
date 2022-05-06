@@ -37,7 +37,7 @@ void ready_q(int at[], int NOP, int ready[])
 
 void main()
 {
-    int i, NOP, sum = 0, count = 0, y, quant, wt = 0, tat = 0, at[10], bt[10], temp[10], ready[10],last;
+    int i, NOP, sum = 0, count = 0, y, quant, wt = 0, tat = 0, at[10], bt[10], temp[10], ready[10];
     float avg_wt, avg_tat;
     printf(" Total number of process in the system: ");
     scanf("%d", &NOP);
@@ -57,7 +57,6 @@ void main()
     printf("Enter the Time Quantum for the process: \t");
     scanf("%d", &quant);
     ready_q(at, NOP, ready);
-    last=ready[NOP-1];
     printf("\n Process No \t\t Burst Time \t\t CT \t\t TAT \t\t Waiting Time ");
     int flag = 0, index = 0;
     for (sum = 0, i = ready[0]; y != 0;)
@@ -90,7 +89,7 @@ void main()
             tat = tat + sum - at[i];
             count = 0;
         }
-        if (temp[i] != 0 && flag != 1 && sum<last )
+        if (temp[i] != 0 && flag != 1)
         {
             for (int k = index; k < NOP-1; k++)
             {
