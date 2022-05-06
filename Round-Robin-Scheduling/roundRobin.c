@@ -63,6 +63,11 @@ void main()
     {
         while (flag != 1)
         {
+            if (temp[i] == 0 && index != NOP - 1)
+            {
+                i = ready[index + 1];
+                continue;
+            }
             if (at[i] <= sum)
             {
                 break;
